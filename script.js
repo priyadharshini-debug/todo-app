@@ -1,30 +1,26 @@
 function addTask(){
 
-const taskInput = document.getElementById("taskInput");
-const priority = document.getElementById("priority").value;
-const date = document.getElementById("date").value;
-const taskList = document.getElementById("taskList");
+let taskInput=document.getElementById("taskInput");
+let priority=document.getElementById("priority").value;
 
-const taskText = taskInput.value.trim();
+let taskText=taskInput.value;
 
-if(taskText === ""){
-alert("Please enter a task");
+if(taskText===""){
+alert("Enter a task");
 return;
 }
 
-const li = document.createElement("li");
-li.className = "task";
+let li=document.createElement("li");
 
-li.innerHTML = `
-<span>${taskText} | ${priority} | ${date}</span>
-<button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+li.className="task "+priority;
+
+li.innerHTML=
+`
+<span>${taskText}</span>
+<button class="delete" onclick="this.parentElement.remove()">Delete</button>
 `;
 
-taskList.appendChild(li);
+document.getElementById("taskList").appendChild(li);
 
-taskInput.value = "";
-}
-
-function deleteTask(button){
-button.parentElement.remove();
+taskInput.value="";
 }

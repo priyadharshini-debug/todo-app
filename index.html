@@ -2,38 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Task Manager</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<div class="app">
 
-<h1>Task Manager</h1>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Task Manager</h2>
 
-<div class="task-input">
+        <ul>
+            <li>📥 Inbox</li>
+            <li>📅 Today</li>
+            <li>🗓 Upcoming</li>
+            <li>📁 Projects</li>
+        </ul>
+    </div>
 
-<input type="text" id="taskInput" placeholder="Enter task">
+    <!-- Main Section -->
+    <div class="main">
 
-<select id="priority">
-<option value="Low">Low</option>
-<option value="Medium">Medium</option>
-<option value="High">High</option>
-</select>
+        <h1>Today</h1>
 
-<input type="date" id="date">
+        <div class="task-input">
 
-<button onclick="addTask()">Add</button>
+            <input type="text" id="taskInput" placeholder="Add a task...">
 
-</div>
+            <select id="priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
 
-<ul id="taskList"></ul>
+            <button onclick="addTask()">Add Task</button>
+
+        </div>
+
+        <ul id="taskList"></ul>
+
+    </div>
 
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
